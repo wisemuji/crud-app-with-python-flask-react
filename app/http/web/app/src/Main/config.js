@@ -1,5 +1,5 @@
 let config = {
-    'issuer': 'https://dev-496636.oktapreview.com/oauth2/default',
+    'issuer': 'https://dev-496636.okta.com/oauth2/default',
     'client_id': '0oag0iopu9NQVKFXA356'
 }
 

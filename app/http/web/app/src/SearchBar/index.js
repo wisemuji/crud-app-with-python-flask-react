@@ -72,12 +72,24 @@ const styles = theme => ({
 class SearchBar extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {};
     this.logout = this.logout.bind(this);
+  }
+
+  async checkAuthentication() {
+    const authenticated = await this.props.auth.isAuthenticated();
+    if (authenticated !== this.state.authenticated) {
+      this.setState({ authenticated });
+    }
   }
 
   async logout(e) {
     e.preventDefault();
     this.props.auth.logout('/');
+  }
+
+  async componentDidMount() {
+    this.checkAuthentication();
   }
 
   render() {

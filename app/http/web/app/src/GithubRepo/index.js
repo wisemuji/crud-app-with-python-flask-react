@@ -1,3 +1,4 @@
+    
 import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
@@ -27,8 +28,6 @@ class GithubRepo extends React.Component {
   handleClick = (event) =>  {
     this.props.onKudo(this.props.repo)
   }
-
-
   render() {
     const { classes } = this.props;
 
@@ -51,5 +50,9 @@ class GithubRepo extends React.Component {
     );
   }
 }
+
+GithubRepo.propTypes = {
+  classes: PropTypes.object.isRequired,
+};
 
 export default withStyles(styles)(GithubRepo);
